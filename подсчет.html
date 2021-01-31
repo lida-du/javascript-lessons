@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function clickCount(){
+            if (typeof (Storage)!== "undefined"){
+                if (localStorage.clickcount){
+                    localStorage.clickcount =
+                        Number (localStorage.clickcount)+1;
+                }else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML= " нажать на кнопку "
+                    + localStorage.clickcount + " time (s).";
+            }else{
+                document.getElementById("result").innerHTML = "ваш браузер не поддерживает";
+                }
+            }
+
+    </script>
+</head>
+<body>
+<h1>Постоянное хранение</h1>
+<p><button onclick="clickCount()" type="button">Нажми на меня</button> </p>
+<div id ="result"></div>
+
+</body>
+</html>

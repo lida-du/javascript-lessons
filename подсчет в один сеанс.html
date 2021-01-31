@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function clickCount() {
+            if (typeof (Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = " Нажми на кномпу " +
+                    sessionStorage.clickcount + " time(s) в этой сессию.";
+            } else {
+                document.getElementById("result").innerHTML = "ваш юраузер не поддерживает без хранилище";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <p><button onclick="clickCount()" type="button">Нажми на меня </button></p>
+    <div id="result"></div>
+
+
+
+</body>
+</html>
